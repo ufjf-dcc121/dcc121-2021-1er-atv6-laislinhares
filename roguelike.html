@@ -472,9 +472,13 @@
     </table>
     <script>
         const celulas = document.querySelectorAll("td");
-        for(let c = 0; c < celulas.length; c++) {
+        for(let c = 0; c < celulas.length - 1; c++) {
             const element = celulas[c];
-            element.classList.add('parede');
+            if(!element.classList.contains('parede') && !element.classList.contains('tesouro') && !element.classList.contains('orc'))
+            {
+                element.classList.add('parede');
+            }
+            
         }
     </script>
 </body>
