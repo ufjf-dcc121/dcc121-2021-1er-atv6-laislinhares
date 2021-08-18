@@ -488,6 +488,25 @@
         {
             let target = event.target;
             console.log("Classe: ", target.classList.value);
+
+            if(target.classList.contains('parede'))
+            {
+                target.classList.remove('parede');
+            }
+            else if(!target.classList.contains('parede') && !target.classList.contains('orc') && !target.classList.contains('tesouro'))
+            {
+                target.classList.add('orc');
+            }
+            else if(target.classList.contains('orc'))
+            {
+                target.classList.add('tesouro');
+                target.classList.remove('orc');
+            }
+            else if(target.classList.contains('tesouro'))
+            {
+                target.classList.add('parede');
+                target.classList.remove('tesouro');
+            }
         }
     </script>
 </body>
